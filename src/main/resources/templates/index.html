@@ -82,27 +82,27 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>电话</label>
-                                                <input name="phone" type="number" class="form-control"
-                                                       placeholder="Smith...">
+                                                <input name="phone0" type="number" class="form-control"
+                                                       placeholder="">
                                             </div>
                                         </div>
                                         <div class="col-sm-10 col-sm-offset-1">
                                             <div class="form-group">
                                                 <label>应聘职位</label>
-                                                <input name="post" type="text" class="form-control"
-                                                       placeholder="andrew@creative-tim.com">
+                                                <input  required name="post" type="text" class="form-control"
+                                                       placeholder="">
                                             </div>
                                         </div>
                                         <div class="col-sm-10 col-sm-offset-1">
                                             <div class="form-group">
                                                 <label>预计可到岗时间</label>
-                                                <input name="date1" type="date" class="form-control" placeholder="">
+                                                <input required name="date1" type="date" class="form-control" placeholder="">
                                             </div>
                                         </div>
                                         <div class="col-sm-10 col-sm-offset-1">
                                             <div class="form-group">
                                                 <label>期望待遇</label>
-                                                <input name="salary" type="text" class="form-control"
+                                                <input required name="salary" type="text" class="form-control"
                                                        placeholder="5000元/月 ; 10k/月">
                                             </div>
                                         </div>
@@ -127,14 +127,14 @@
                                         <div class="col-sm-10 col-sm-offset-1">
                                             <div class="form-group">
                                                 <label>出生日期</label>
-                                                <input name="date2" type="date" class="form-control" placeholder="">
+                                                <input required name="date2" type="date" class="form-control" placeholder="">
                                             </div>
                                         </div>
                                         <div class="col-sm-10 col-sm-offset-1">
                                             <div class="form-group">
                                                 <label>身高</label>
                                                 <div class="input-group">
-                                                    <input name="height" type="number" class="form-control"
+                                                    <input required name="iheight" type="number" class="form-control"
                                                            placeholder="">
                                                     <span class="input-group-addon">厘米</span>
                                                 </div>
@@ -148,7 +148,7 @@
                                                         <div id="distpicker">
                                                             <div class="form-group">
                                                                 <div style="position: relative;">
-                                                                    <input id="city-picker3" name="nativePlace"
+                                                                    <input required id="city-picker3" name="nativePlace"
                                                                            class="form-control" readonly type="text"
                                                                            value="" data-toggle="city-picker">
                                                                 </div>
@@ -167,7 +167,7 @@
                                         <div class="col-sm-10 col-sm-offset-1">
                                             <div class="form-group">
                                                 <label>宗教信仰</label>
-                                                <input name="faith" type="text" class="form-control" placeholder="没有则填'无'">
+                                                <input  name="faith" type="text" class="form-control" placeholder="">
                                             </div>
                                         </div>
                                         <div class="col-sm-10 col-sm-offset-1">
@@ -241,12 +241,12 @@
                                                     </thead>
                                                     <tbody id="family">
                                                     <tr name="family1">
-                                                        <td onclick="inputValue(this)">请点击</td>
-                                                        <td onclick="inputValue(this)">请点击</td>
-                                                        <td onclick="inputValue(this)">请点击</td>
-                                                        <td onclick="inputValue(this)">请点击</td>
-                                                        <td onclick="inputValue(this)">请点击</td>
-                                                        <td onclick="inputValue(this)">请点击</td>
+                                                        <td onclick="inputValue(this)">请点击<input required name="family1" type="hidden" value=""></td>
+                                                        <td onclick="inputValue(this)">请点击<input required name="family1" type="hidden" value=""></td>
+                                                        <td onclick="inputValue(this)">请点击<input required name="family1" type="hidden" value=""></td>
+                                                        <td onclick="inputValue(this)">请点击<input required name="family1" type="hidden" value=""></td>
+                                                        <td onclick="inputValue(this)">请点击<input required name="family1" type="hidden" value=""></td>
+                                                        <td onclick="inputValue(this)">请点击<input required name="family1" type="hidden" value=""></td>
                                                     </tr>
 
                                                     </tbody>
@@ -318,7 +318,7 @@
                                                     培训机构 <input name="training1" type="text" class="form-control" placeholder="">
                                                     培训时间 <input name="time1" type="text" class="form-control" placeholder="X个月">
                                                     培训课程 <input name="course1" type="text" class="form-control" placeholder="">
-                                                    获得证书 <input name="traincertificate1" type="text" class="form-control" placeholder="">
+                                                    获得证书 <input name="certificate5" type="text" class="form-control" placeholder="">
                                                 </block>
                                             </div>
                                             <input onclick="addStudy(3)" type='button'
@@ -336,19 +336,19 @@
                                                     <b>说: </b>
                                                     <br>
                                                     <div class="radio radio-inline">
-                                                        <input type="radio" name="enspeak" id="radio11" value="男" checked>
+                                                        <input type="radio" name="enspeak" id="radio11" value="优秀" checked>
                                                         <label for="radio11">
                                                             优秀
                                                         </label>
                                                     </div>
                                                     <div class="radio radio-inline">
-                                                        <input type="radio" name="enspeak" id="radio12" value="女">
+                                                        <input type="radio" name="enspeak" id="radio12" value="一般">
                                                         <label for="radio12">
                                                             一般
                                                         </label>
                                                     </div>
                                                     <div class="radio radio-inline">
-                                                        <input type="radio" name="enspeak" id="radio13" value="女">
+                                                        <input type="radio" name="enspeak" id="radio13" value="差">
                                                         <label for="radio13">
                                                             差
                                                         </label>
@@ -357,19 +357,19 @@
                                                     <b>读: </b>
                                                     <br>
                                                     <div class="radio radio-inline">
-                                                        <input type="radio" name="enread" id="radio14" value="男" checked>
+                                                        <input type="radio" name="enread" id="radio14" value="优秀" checked>
                                                         <label for="radio14">
                                                             优秀
                                                         </label>
                                                     </div>
                                                     <div class="radio radio-inline">
-                                                        <input type="radio" name="enread" id="radio15" value="女">
+                                                        <input type="radio" name="enread" id="radio15" value="一般">
                                                         <label for="radio15">
                                                             一般
                                                         </label>
                                                     </div>
                                                     <div class="radio radio-inline">
-                                                        <input type="radio" name="enread" id="radio16" value="女">
+                                                        <input type="radio" name="enread" id="radio16" value="差">
                                                         <label for="radio16">
                                                             差
                                                         </label>
@@ -378,19 +378,19 @@
                                                     <b>写: </b>
                                                     <br>
                                                     <div class="radio radio-inline">
-                                                        <input type="radio" name="enwrite" id="radio17" value="男" checked>
+                                                        <input type="radio" name="enwrite" id="radio17" value="优秀" checked>
                                                         <label for="radio17">
                                                             优秀
                                                         </label>
                                                     </div>
                                                     <div class="radio radio-inline">
-                                                        <input type="radio" name="enwrite" id="radio18" value="女">
+                                                        <input type="radio" name="enwrite" id="radio18" value="一般">
                                                         <label for="radio18">
                                                             一般
                                                         </label>
                                                     </div>
                                                     <div class="radio radio-inline">
-                                                        <input type="radio" name="enwrite" id="radio19" value="女">
+                                                        <input type="radio" name="enwrite" id="radio19" value="差">
                                                         <label for="radio19">
                                                             差
                                                         </label>
@@ -404,19 +404,19 @@
                                                     <b>说: </b>
                                                     <br>
                                                     <div class="radio radio-inline">
-                                                        <input type="radio" name="enspeak2" id="radio21" value="男" checked>
+                                                        <input type="radio" name="enspeak2" id="radio21" value="优秀" checked>
                                                         <label for="radio21">
                                                             优秀
                                                         </label>
                                                     </div>
                                                     <div class="radio radio-inline">
-                                                        <input type="radio" name="enspeak2" id="radio22" value="女">
+                                                        <input type="radio" name="enspeak2" id="radio22" value="一般">
                                                         <label for="radio22">
                                                             一般
                                                         </label>
                                                     </div>
                                                     <div class="radio radio-inline">
-                                                        <input type="radio" name="enspeak2" id="radio23" value="女">
+                                                        <input type="radio" name="enspeak2" id="radio23" value="差">
                                                         <label for="radio23">
                                                             差
                                                         </label>
@@ -425,19 +425,19 @@
                                                     <b>读: </b>
                                                     <br>
                                                     <div class="radio radio-inline">
-                                                        <input type="radio" name="enread2" id="radio24" value="男" checked>
+                                                        <input type="radio" name="enread2" id="radio24" value="优秀" checked>
                                                         <label for="radio24">
                                                             优秀
                                                         </label>
                                                     </div>
                                                     <div class="radio radio-inline">
-                                                        <input type="radio" name="enread2" id="radio25" value="女">
+                                                        <input type="radio" name="enread2" id="radio25" value="一般">
                                                         <label for="radio25">
                                                             一般
                                                         </label>
                                                     </div>
                                                     <div class="radio radio-inline">
-                                                        <input type="radio" name="enread2" id="radio26" value="女">
+                                                        <input type="radio" name="enread2" id="radio26" value="差">
                                                         <label for="radio26">
                                                             差
                                                         </label>
@@ -446,19 +446,19 @@
                                                     <b>写: </b>
                                                     <br>
                                                     <div class="radio radio-inline">
-                                                        <input type="radio" name="enwrite2" id="radio27" value="男" checked>
+                                                        <input type="radio" name="enwrite2" id="radio27" value="优秀" checked>
                                                         <label for="radio27">
                                                             优秀
                                                         </label>
                                                     </div>
                                                     <div class="radio radio-inline">
-                                                        <input type="radio" name="enwrite2" id="radio28" value="女">
+                                                        <input type="radio" name="enwrite2" id="radio28" value="一般">
                                                         <label for="radio28">
                                                             一般
                                                         </label>
                                                     </div>
                                                     <div class="radio radio-inline">
-                                                        <input type="radio" name="enwrite2" id="radio29" value="女">
+                                                        <input type="radio" name="enwrite2" id="radio29" value="差">
                                                         <label for="radio29">
                                                             差
                                                         </label>
@@ -508,11 +508,11 @@
                                                     </thead>
                                                     <tbody id="experience">
                                                     <tr name="experience1">
-                                                        <td onclick="inputValue(this)">请点击</td>
-                                                        <td onclick="inputValue(this)">请点击</td>
-                                                        <td onclick="inputValue(this)">1999/06-1999/07</td>
-                                                        <td onclick="inputValue(this)">请点击</td>
-                                                        <td onclick="inputValue(this)">请点击</td>
+                                                        <td onclick="inputValue(this)">请点击<input name="experience1" type="hidden" value=""></td>
+                                                        <td onclick="inputValue(this)">请点击<input name="experience1" type="hidden" value=""></td>
+                                                        <td onclick="inputValue(this)">1999/06-1999/07<input name="experience1" type="hidden" value=""></td>
+                                                        <td onclick="inputValue(this)">请点击<input name="experience1" type="hidden" value=""></td>
+                                                        <td onclick="inputValue(this)">请点击<input name="experience1" type="hidden" value=""></td>
                                                     </tr>
 
                                                     </tbody>

@@ -59,6 +59,7 @@ function addMember(size) {
 }
 var studytimes = 2;
 var traintimes = 2;
+var traincertificate = 6;
 
 function addStudy(size) {
     if(size==4){  //学校
@@ -89,9 +90,10 @@ function addStudy(size) {
                 '                                                    培训机构 <input name="training'+traintimes+'" type="text" class="form-control" placeholder="">\n' +
                 '                                                    培训时间 <input name="time'+traintimes+'" type="text" class="form-control" placeholder="X个月">\n' +
                 '                                                    培训课程 <input name="course'+traintimes+'" type="text" class="form-control" placeholder="">\n' +
-                '                                                    获得证书 <input name="traincertificate'+traintimes+'" type="text" class="form-control" placeholder="">\n' +
+                '                                                    获得证书 <input name="certificate'+traincertificate+'" type="text" class="form-control" placeholder="">\n' +
                 '                                                </block>');
             traintimes ++;
+            traincertificate ++;
         }
     }
 }

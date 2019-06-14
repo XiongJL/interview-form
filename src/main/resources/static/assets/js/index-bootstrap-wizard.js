@@ -25,30 +25,30 @@ $(document).ready(function(){
 
     // Code for the Validator
     //验证.输入
-    // var $validator = $('.wizard-card form').validate({
-	// 	  rules: {
-	// 	     iname: {
-	// 	      required: true,
-	// 	      minlength: 2
-	// 	    },
-	// 	    phone: {
-	// 	      required: true,
-	// 	      minlength: 11,
-    //             maxlength: 11,
-    //             number: true
-	// 	    },
-    //           height:{
-    //               required: true,
-    //               number: true
-    //           },
-    //           idcard:{
-    //               required: true,
-    //               minlength: 18,
-    //               maxlength: 18,
-    //           }
-    //
-    //     }
-	// });
+    var $validator = $('.wizard-card form').validate({
+		  rules: {
+		     iname: {
+		      required: true,
+		      minlength: 2
+		    },
+		    phone: {
+		      required: true,
+		      minlength: 11,
+                maxlength: 11,
+                number: true
+		    },
+              height:{
+                  required: true,
+                  number: true
+              },
+              idcard:{
+                  required: true,
+                  minlength: 18,
+                  maxlength: 18,
+              }
+
+        }
+	});
 
     // Wizard Initialization
   	$('.wizard-card').bootstrapWizard({
