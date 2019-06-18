@@ -1,18 +1,34 @@
+var send = false
+var send2 = false
 /*发送数据*/
+var submittimes = 0;
 function put() {
     var data = $("#data").serialize();
     console.log(data)
-    $.ajax({
-        url:"/inform/save",
-        data: data,
-        type: "post",
-        success:function (res) {
-            console.log(res)
-        },
-        error:function (err) {
-            console.log(err)
-        }
-    })
+    if (submittimes>=2){
+        alert("请勿重复提交!")
+    }
+    else if (send==false || send2 ==false){
+        checkInput()
+        //alert("请完成必填内容!")
+    }else{
+        $.ajax({
+            url:"/inform/save",
+            data: data,
+            type: "post",
+            success:function (res) {
+                console.log(res)
+                if("ok"==res){
+                    alert("提交成功!")
+                    submittimes++;
+                }
+            },
+            error:function (err) {
+                console.log(err)
+                alert("提交失败!")
+            }
+        })
+    }
 }
 
 function inputValue(obj){
@@ -20,10 +36,13 @@ function inputValue(obj){
     //获取数据类型
     var type = obj.parentElement.getAttribute("name");
     var content = prompt("请输入")
+    if (content==null){
+        content = ""
+    }
     obj.innerHTML=content+'<input name ="'+type+'" type=hidden value="'+content+'">';
 }
 var friend = 2 ;
-var family = 2;
+var family = 3;
 function addMember(size) {
         if(size == 3){ //家庭
             var count = document.getElementById("family").getElementsByTagName("tr").length;
@@ -31,12 +50,12 @@ function addMember(size) {
                 alert("最多填写三名.")
             }else {
                 document.getElementById("family").insertAdjacentHTML("beforeend", '<tr name="family'+family+'">\n' +
-                    '                                                    <td onclick="inputValue(this)">请点击</td>\n' +
-                    '                                                    <td onclick="inputValue(this)">请点击</td>\n' +
-                    '                                                    <td onclick="inputValue(this)">请点击</td>\n' +
-                    '                                                    <td onclick="inputValue(this)">请点击</td>\n' +
-                    '                                                    <td onclick="inputValue(this)">请点击</td>\n' +
-                    '                                                    <td onclick="inputValue(this)">请点击</td>\n' +
+                    '                                                    <td onclick="inputValue(this)">请点击<input name="family'+family+'" type="hidden" value=""></td>\n' +
+                    '                                                    <td onclick="inputValue(this)">请点击<input name="family'+family+'" type="hidden" value=""></td>\n' +
+                    '                                                    <td onclick="inputValue(this)">请点击<input name="family'+family+'" type="hidden" value=""></td>\n' +
+                    '                                                    <td onclick="inputValue(this)">请点击<input name="family'+family+'" type="hidden" value=""></td>\n' +
+                    '                                                    <td onclick="inputValue(this)">请点击<input name="family'+family+'" type="hidden" value=""></td>\n' +
+                    '                                                    <td onclick="inputValue(this)">请点击<input name="family'+family+'" type="hidden" value=""></td>\n' +
                     '                                                </tr>');
                 family++;
             }
@@ -47,11 +66,11 @@ function addMember(size) {
                 alert("最多填写两名.")
             } else {
                 document.getElementById("friend").insertAdjacentHTML("beforeend", '<tr name="friend'+friend+'">\n' +
-                    '                                                    <td onclick="inputValue(this)">请点击</td>\n' +
-                    '                                                    <td onclick="inputValue(this)">请点击</td>\n' +
-                    '                                                    <td onclick="inputValue(this)">请点击</td>\n' +
-                    '                                                    <td onclick="inputValue(this)">请点击</td>\n' +
-                    '                                                    <td onclick="inputValue(this)">请点击</td>\n' +
+                    '                                                    <td onclick="inputValue(this)">请点击<input name="friend'+friend+'" type="hidden" value=""></td>\n' +
+                    '                                                    <td onclick="inputValue(this)">请点击<input name="friend'+friend+'" type="hidden" value=""></td>\n' +
+                    '                                                    <td onclick="inputValue(this)">请点击<input name="friend'+friend+'" type="hidden" value=""></td>\n' +
+                    '                                                    <td onclick="inputValue(this)">请点击<input name="friend'+friend+'" type="hidden" value=""></td>\n' +
+                    '                                                    <td onclick="inputValue(this)">请点击<input name="friend'+friend+'" type="hidden" value=""></td>\n' +
                     '                                                </tr>');
                 friend++;
             }
@@ -105,12 +124,102 @@ function addExp(size){  //添加工作简历
         alert("最多填写四段经历.")
     }else {
         document.getElementById("experience").insertAdjacentHTML("beforeend", '<tr name="experience'+exp+'">\n' +
-            '                                                        <td onclick="inputValue(this)">请点击</td>\n' +
-            '                                                        <td onclick="inputValue(this)">请点击</td>\n' +
-            '                                                        <td onclick="inputValue(this)">1999/06-1999/07</td>\n' +
-            '                                                        <td onclick="inputValue(this)">请点击</td>\n' +
-            '                                                        <td onclick="inputValue(this)">请点击</td>\n' +
+            '                                                        <td onclick="inputValue(this)">请点击<input name="experience'+exp+'" type="hidden" value=""></td>\n' +
+            '                                                        <td onclick="inputValue(this)">请点击<input name="experience'+exp+'" type="hidden" value=""></td>\n' +
+            '                                                        <td onclick="inputValue(this)">1999/06-1999/07<input name="experience'+exp+'" type="hidden" value=""></td>\n' +
+            '                                                        <td onclick="inputValue(this)">请点击<input name="experience'+exp+'" type="hidden" value=""></td>\n' +
+            '                                                        <td onclick="inputValue(this)">请点击<input name="experience'+exp+'" type="hidden" value=""></td>\n' +
             '                                                    </tr>');
         exp++
     }
+}
+
+//全变量,当前页数.
+var page = 1;   //1 代表第一页,2代表第二页,3代表第三页   +1  下一步   -1后退
+
+//移动到顶部
+function toNext() {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+    // page++;
+    checkInput()
+}
+function toBack(){
+    // page--;
+    //checkInput()
+}
+/* 检查填写的内容*/
+var right = false;
+var sos = false;
+var exp = false;
+function checkContent(selector){
+    $(selector).each(function(){
+        var b = selector;
+        var a= $(this).children()
+        if (a.context.innerText.indexOf("请点击")!=-1){  //存在  请点击
+            if (selector.indexOf("family")!=-1){   //且是family
+                right = false;//没填写完整
+            }else if (selector.indexOf("sos")!=-1){
+                sos = false ;
+            }else if (selector.indexOf("experience")!=-1){
+                exp = false;
+            }
+
+        }else {   //完整
+            if (selector.indexOf("family")!=-1){   //且是family
+                right = true;//填写完整
+            }else if (selector.indexOf("sos")!=-1){
+                sos = true ;
+            }else if (selector.indexOf("experience")!=-1){
+                exp = true;
+            }
+        }
+    })
+}
+//检查用户输入
+function checkInput(){
+        $("#title").children().each(function () {
+            var type = $(this)
+            console.log("内容:"+type.context.innerText)
+            if(type.context.innerText=="技能"){
+                console.log(type.context.className)
+                if(type.context.className=="active"){  //选中的是这个元素
+                    for(i=1 ; i<=2 ;i++){
+
+                        checkContent("#family"+i);
+                        console.log(right)
+                        if(right==true){ //填写完整
+                            continue
+                        }
+                        else{  //存在 请点击字符 未填写完整
+                            alert("请填写完整家庭成员信息,至少两位.")
+                            setTimeout(function () {
+                                $("#back").click()
+                            },100)
+                            break
+                        }
+                    }
+                }
+            }else if (type.context.innerText=="经验"){
+                if(type.context.className=="active") {//选中的是这个元素
+                    checkContent("#sos1")
+                    if(sos==true){ //填写完整
+                        send = true
+                    }
+                    else if (sos==false) {  //存在 请点击字符 未填写完整
+                        send = false
+                        alert("请填写紧急联系人,至少一位!")
+                    }
+                    checkContent("#experience1")
+                    if(exp==true){ //填写完整
+                        send2 = true
+                    }
+                    else if (exp==false) {  //存在 请点击字符 未填写完整
+                        send2 = false
+                        alert("请填写工作经历,至少一段!")
+                    }
+                }
+            }
+
+        })
+
 }

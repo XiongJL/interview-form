@@ -71,8 +71,8 @@
                     '<div class="city-select-wrap">' +
                     '<div class="city-select-tab">' +
                     '<a class="active" data-count="province">省份</a>' +
-                    (this.includeDem('city') ? '<a data-count="city">城市</a>' : '') +
-                    (this.includeDem('district') ? '<a data-count="district">区县</a>' : '') + '</div>' +
+                    // (this.includeDem('city') ? '<a data-count="city">城市</a>' : '') +
+                    // (this.includeDem('district') ? '<a data-count="district">区县</a>' : '') + '</div>' +
                     '<div class="city-select-content">' +
                     '<div class="city-select province" data-count="province"></div>' +
                     (this.includeDem('city') ? '<div class="city-select city" data-count="city"></div>' : '') +
@@ -526,7 +526,7 @@
     CityPicker.DEFAULTS = {
         simple: false,
         responsive: false,
-        placeholder: '请选择省/市/区',
+        placeholder: '请选择省',
         level: 'district',
         province: '',
         city: '',

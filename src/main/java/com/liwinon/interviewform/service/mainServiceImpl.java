@@ -612,7 +612,7 @@ public class mainServiceImpl implements mainService {
         data.put("relation7",relation7);
         data.put("soslocation1",soslocation1);
         data.put("phone7",phone7);
-       // System.out.println(data);
+        System.out.println(data);
 
         return data;
     }

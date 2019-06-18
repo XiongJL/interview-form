@@ -23,7 +23,8 @@
 </head>
 
 <body>
-<div class="image-container set-full-height" style="background-image: url('../assets/img/wizard-city.jpg')">
+<!--<div class="image-container set-full-height" style="background-image: url('../assets/img/wizard-city.jpg')">-->
+<div class="image-container set-full-height" style="background-color: #777777">
 
 <!--    &lt;!&ndash;  Made With Get Shit Done Kit  &ndash;&gt;-->
 <!--    <a href="#/get-shit-done/index.html?ref=get-shit-done-bootstrap-wizard" class="made-with-mk">-->
@@ -55,9 +56,9 @@
                             </div>
 
                             <div class="wizard-navigation">
-                                <ul>
+                                <ul id="title">
                                     <li><a href="#about" data-toggle="tab">基本</a></li>
-                                    <li><a href="#account" data-toggle="tab">技能</a></li>
+                                    <li id="jin"><a href="#account" data-toggle="tab">技能</a></li>
                                     <li><a href="#address" data-toggle="tab">经验</a></li>
                                 </ul>
 
@@ -178,7 +179,8 @@
                                                     <option>初中</option>
                                                     <option>职中</option>
                                                     <option>高中</option>
-                                                    <option>大学</option>
+                                                    <option>大专</option>
+                                                    <option>本科</option>
                                                     <option>硕士</option>
                                                     <option>博士</option>
                                                 </select>
@@ -227,7 +229,7 @@
                                     <div class="row">
                                         <div class="col-sm-10 col-sm-offset-1">
                                             <div class="form-group">
-                                                <label><b>家庭主要成员</b></label>
+                                                <label><b>家庭主要成员</b><small>(必填两位成员)</small></label>
                                                 <table class="table table-striped table-condensed">
                                                     <thead>
                                                     <tr>
@@ -240,7 +242,15 @@
                                                     </tr>
                                                     </thead>
                                                     <tbody id="family">
-                                                    <tr name="family1">
+                                                    <tr id="family1"name="family1">
+                                                        <td onclick="inputValue(this)">请点击<input required name="family1" type="hidden" value=""></td>
+                                                        <td onclick="inputValue(this)">请点击<input required name="family1" type="hidden" value=""></td>
+                                                        <td onclick="inputValue(this)">请点击<input required name="family1" type="hidden" value=""></td>
+                                                        <td onclick="inputValue(this)">请点击<input required name="family1" type="hidden" value=""></td>
+                                                        <td onclick="inputValue(this)">请点击<input required name="family1" type="hidden" value=""></td>
+                                                        <td onclick="inputValue(this)">请点击<input required name="family1" type="hidden" value=""></td>
+                                                    </tr>
+                                                    <tr id="family2" name="family2">
                                                         <td onclick="inputValue(this)">请点击<input required name="family1" type="hidden" value=""></td>
                                                         <td onclick="inputValue(this)">请点击<input required name="family1" type="hidden" value=""></td>
                                                         <td onclick="inputValue(this)">请点击<input required name="family1" type="hidden" value=""></td>
@@ -272,11 +282,11 @@
                                                     </thead>
                                                     <tbody id="friend">
                                                     <tr name="friend1">
-                                                        <td onclick="inputValue(this)">请点击</td>
-                                                        <td onclick="inputValue(this)">请点击</td>
-                                                        <td onclick="inputValue(this)">请点击</td>
-                                                        <td onclick="inputValue(this)">请点击</td>
-                                                        <td onclick="inputValue(this)">请点击</td>
+                                                        <td onclick="inputValue(this)">请点击<input name="friend1" type="hidden" value=""></td>
+                                                        <td onclick="inputValue(this)">请点击<input name="friend1" type="hidden" value=""></td>
+                                                        <td onclick="inputValue(this)">请点击<input name="friend1" type="hidden" value=""></td>
+                                                        <td onclick="inputValue(this)">请点击<input name="friend1" type="hidden" value=""></td>
+                                                        <td onclick="inputValue(this)">请点击<input name="friend1" type="hidden" value=""></td>
                                                     </tr>
 
                                                     </tbody>
@@ -495,7 +505,7 @@
 
                                         <div class="col-xs-12">
                                             <div class="form-group">
-                                                <label><b>工作简历</b><small>由最近的写起</small></label>
+                                                <label><b>工作经历</b><small>由最近的写起</small></label>
                                                 <table class="table table-striped table-condensed">
                                                     <thead>
                                                     <tr>
@@ -507,7 +517,7 @@
                                                     </tr>
                                                     </thead>
                                                     <tbody id="experience">
-                                                    <tr name="experience1">
+                                                    <tr id="experience1" name="experience1">
                                                         <td onclick="inputValue(this)">请点击<input name="experience1" type="hidden" value=""></td>
                                                         <td onclick="inputValue(this)">请点击<input name="experience1" type="hidden" value=""></td>
                                                         <td onclick="inputValue(this)">1999/06-1999/07<input name="experience1" type="hidden" value=""></td>
@@ -531,7 +541,7 @@
                                         </div>
                                         <div class="col-xs-12">
                                             <div class="form-group">
-                                                <label><b>紧急联系人</b></label>
+                                                <label><b>紧急联系人</b><small>至少填一位</small></label>
                                                 <table class="table table-striped table-condensed">
                                                     <thead>
                                                     <tr>
@@ -542,17 +552,17 @@
                                                     </tr>
                                                     </thead>
                                                     <tbody >
-                                                    <tr name="sosconcat1">
-                                                        <td onclick="inputValue(this)">请点击</td>
-                                                        <td onclick="inputValue(this)">请点击</td>
-                                                        <td onclick="inputValue(this)">请点击</td>
-                                                        <td onclick="inputValue(this)">请点击</td>
+                                                    <tr id="sos1" name="sosconcat1">
+                                                        <td onclick="inputValue(this)">请点击<input name="sosconcat1" type="hidden" value=""></td>
+                                                        <td onclick="inputValue(this)">请点击<input name="sosconcat1" type="hidden" value=""></td>
+                                                        <td onclick="inputValue(this)">请点击<input name="sosconcat1" type="hidden" value=""></td>
+                                                        <td onclick="inputValue(this)">请点击<input name="sosconcat1" type="hidden" value=""></td>
                                                     </tr>
                                                     <tr name="sosconcat2">
-                                                        <td onclick="inputValue(this)">请点击</td>
-                                                        <td onclick="inputValue(this)">请点击</td>
-                                                        <td onclick="inputValue(this)">请点击</td>
-                                                        <td onclick="inputValue(this)">请点击</td>
+                                                        <td onclick="inputValue(this)">请点击<input name="sosconcat2" type="hidden" value=""></td>
+                                                        <td onclick="inputValue(this)">请点击<input name="sosconcat2" type="hidden" value=""></td>
+                                                        <td onclick="inputValue(this)">请点击<input name="sosconcat2" type="hidden" value=""></td>
+                                                        <td onclick="inputValue(this)">请点击<input name="sosconcat2" type="hidden" value=""></td>
                                                     </tr>
 
                                                     </tbody>
@@ -565,7 +575,7 @@
                             </div>
                             <div class="wizard-footer height-wizard">
                                 <div class="pull-right">
-                                    <input type='button' class='btn btn-next btn-fill btn-warning btn-wd btn-sm'
+                                    <input type='button' onclick="toNext()" class='btn btn-next btn-fill btn-warning btn-wd btn-sm'
                                            name='next' value='下一步'/>
                                     <input onclick="put()" type='button' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm'
                                            name='finish' value='提交'/>
@@ -573,8 +583,8 @@
                                 </div>
 
                                 <div class="pull-left">
-                                    <input type='button' class='btn btn-previous btn-fill btn-default btn-wd btn-sm'
-                                           name='previous' value='后退'/>
+                                    <input id="back" type='button' class='btn btn-previous btn-fill btn-default btn-wd btn-sm'
+                                          onclick="toBack()" name='previous' value='后退'/>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>

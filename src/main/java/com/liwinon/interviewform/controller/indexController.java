@@ -30,6 +30,6 @@ public class indexController {
         String path1 = data.get("phone0");
         String path="\\\\172.60.6.66\\7天自动删除\\app\\"+path0+path1+".doc"; //要写入的地址
         WordUtil.writeFile(path,WordUtil.redFileContent("D:\\DOCS\\入职登记表（A3版）修改版本.xml",data));
-        return null;
+        return "ok";
     }
 }
