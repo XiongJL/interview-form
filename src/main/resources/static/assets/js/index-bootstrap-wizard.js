@@ -31,7 +31,7 @@ $(document).ready(function(){
 		      required: true,
 		      minlength: 2
 		    },
-		    phone: {
+              phone0: {
 		      required: true,
 		      minlength: 11,
                 maxlength: 11,

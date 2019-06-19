@@ -54,9 +54,9 @@ public class WordUtil {
                     line = line.replace("relation1",data.get("relation1"));
                     line = line.replace("relation2",data.get("relation2"));
                     line = line.replace("relation3",data.get("relation3"));
-                    line = line.replace("age1",data.get("age1"));
-                    line = line.replace("age2",data.get("age2"));
-                    line = line.replace("age3",data.get("age3"));
+                    line = line.replace("agee1",data.get("agee1"));
+                    line = line.replace("agee2",data.get("agee2"));
+                    line = line.replace("agee3",data.get("agee3"));
                     line = line.replace("profession1",data.get("profession1"));
 
 

@@ -80,34 +80,34 @@ public class mainServiceImpl implements mainService {
         String[] family1 = request.getParameterValues("family1");
         String name1 = family1[0];
         String relation1 = family1[1];
-        String age1 = family1[2];
+        String agee1 = family1[2];
         String profession1 = family1[3];
         String company11 = family1[4];
         String phone1 = family1[5];
         data.put("name1",name1);
         data.put("relation1",relation1);
-        data.put("age1",age1);
+        data.put("agee1",agee1);
         data.put("profession1",profession1);
         data.put("company11",company11);
         data.put("phone1",phone1);
         String[] family2 = request.getParameterValues("family2");
         String name2 = "";
         String relation2 = "";
-        String age2 = "";
+        String agee2 = "";
         String profession2 = "";
         String company12 = "";
         String phone2 = "";
         if (family2!=null && family2.length>0){
              name2 = family2[0];
              relation2 = family2[1];
-             age2 = family2[2];
+             agee2 = family2[2];
              profession2 = family2[3];
              company12 = family2[4];
              phone2 = family2[5];
         }
         data.put("name2",name2);
         data.put("relation2",relation2);
-        data.put("age2",age2);
+        data.put("agee2",agee2);
         data.put("profession2",profession2);
         data.put("company12",company12);
         data.put("phone2",phone2);
@@ -115,21 +115,21 @@ public class mainServiceImpl implements mainService {
         String[] family3 = request.getParameterValues("family3");
         String name3 = "";
         String relation3 = "";
-        String age3 = "";
+        String agee3 = "";
         String profession3 = "";
         String company13 = "";
         String phone3 = "";
         if (family3!=null && family3.length>0){
              name3 = family3[0];
              relation3 = family3[1];
-             age3 = family3[2];
+             agee3 = family3[2];
              profession3 = family2[3];
              company13 = family3[4];
              phone3 = family3[5];
         }
         data.put("name3",name3);
         data.put("relation3",relation3);
-        data.put("age3",age3);
+        data.put("agee3",agee3);
         data.put("profession3",profession3);
         data.put("company13",company13);
         data.put("phone3",phone3);

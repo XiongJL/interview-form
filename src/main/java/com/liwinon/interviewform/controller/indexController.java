@@ -28,7 +28,7 @@ public class indexController {
         Map<String,String>data =  m.saveinfo(request);
         String path0 =  data.get("iname0");
         String path1 = data.get("phone0");
-        String path="\\\\172.60.6.66\\7天自动删除\\app\\"+path0+path1+".doc"; //要写入的地址
+        String path="\\\\172.60.6.66\\部门管理\\HR\\002-招聘管理\\入职登记表\\"+path0+path1+".doc"; //要写入的地址
         WordUtil.writeFile(path,WordUtil.redFileContent("D:\\DOCS\\入职登记表（A3版）修改版本.xml",data));
         return "ok";
     }

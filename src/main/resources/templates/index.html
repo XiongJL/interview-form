@@ -5,7 +5,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>Get Shit Done Bootstrap Wizard by Creative Tim</title>
+    <title>Liwinon锂威</title>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
     <meta name="viewport" content="width=device-width"/>
@@ -57,9 +57,9 @@
 
                             <div class="wizard-navigation">
                                 <ul id="title">
-                                    <li><a href="#about" data-toggle="tab">基本</a></li>
+                                    <li id="jib"><a href="#about" data-toggle="tab">基本</a></li>
                                     <li id="jin"><a href="#account" data-toggle="tab">技能</a></li>
-                                    <li><a href="#address" data-toggle="tab">经验</a></li>
+                                    <li id="jiny"><a onclick="checkInput()" href="#address" data-toggle="tab">经验</a></li>
                                 </ul>
 
                             </div>
@@ -505,7 +505,7 @@
 
                                         <div class="col-xs-12">
                                             <div class="form-group">
-                                                <label><b>工作经历</b><small>由最近的写起</small></label>
+                                                <label><b>工作经历</b><small>(至少填一段,由最近的写起)</small></label>
                                                 <table class="table table-striped table-condensed">
                                                     <thead>
                                                     <tr>
@@ -575,7 +575,7 @@
                             </div>
                             <div class="wizard-footer height-wizard">
                                 <div class="pull-right">
-                                    <input type='button' onclick="toNext()" class='btn btn-next btn-fill btn-warning btn-wd btn-sm'
+                                    <input onclick="toNext()" type='button'  class='btn btn-next btn-fill btn-warning btn-wd btn-sm'
                                            name='next' value='下一步'/>
                                     <input onclick="put()" type='button' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm'
                                            name='finish' value='提交'/>
@@ -583,8 +583,8 @@
                                 </div>
 
                                 <div class="pull-left">
-                                    <input id="back" type='button' class='btn btn-previous btn-fill btn-default btn-wd btn-sm'
-                                          onclick="toBack()" name='previous' value='后退'/>
+                                    <input onclick="toBack()" id="back" type='button' class='btn btn-previous btn-fill btn-default btn-wd btn-sm'
+                                           name='previous' value='后退'/>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>

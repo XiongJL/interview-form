@@ -5,7 +5,8 @@ var submittimes = 0;
 function put() {
     var data = $("#data").serialize();
     console.log(data)
-    if (submittimes>=2){
+   if (submittimes>=2){
+    // if (submittimes>=999){
         alert("请勿重复提交!")
     }
     else if (send==false || send2 ==false){
@@ -143,14 +144,10 @@ function toNext() {
     // page++;
     checkInput()
 }
-function toBack(){
-    // page--;
-    //checkInput()
-}
 /* 检查填写的内容*/
 var right = false;
 var sos = false;
-var exp = false;
+var exps = false;
 function checkContent(selector){
     $(selector).each(function(){
         var b = selector;
@@ -161,7 +158,7 @@ function checkContent(selector){
             }else if (selector.indexOf("sos")!=-1){
                 sos = false ;
             }else if (selector.indexOf("experience")!=-1){
-                exp = false;
+                exps = false;
             }
 
         }else {   //完整
@@ -170,7 +167,7 @@ function checkContent(selector){
             }else if (selector.indexOf("sos")!=-1){
                 sos = true ;
             }else if (selector.indexOf("experience")!=-1){
-                exp = true;
+                exps = true;
             }
         }
     })
@@ -179,12 +176,13 @@ function checkContent(selector){
 function checkInput(){
         $("#title").children().each(function () {
             var type = $(this)
-            console.log("内容:"+type.context.innerText)
-            if(type.context.innerText=="技能"){
+            console.log("id:"+type.context.id)
+            var id = type.context.id;
+            var boolean = id=="jin"
+            if(id=="jin"){
                 console.log(type.context.className)
                 if(type.context.className=="active"){  //选中的是这个元素
                     for(i=1 ; i<=2 ;i++){
-
                         checkContent("#family"+i);
                         console.log(right)
                         if(right==true){ //填写完整
@@ -199,7 +197,7 @@ function checkInput(){
                         }
                     }
                 }
-            }else if (type.context.innerText=="经验"){
+            }else if (id=="jiny"){
                 if(type.context.className=="active") {//选中的是这个元素
                     checkContent("#sos1")
                     if(sos==true){ //填写完整
@@ -210,10 +208,10 @@ function checkInput(){
                         alert("请填写紧急联系人,至少一位!")
                     }
                     checkContent("#experience1")
-                    if(exp==true){ //填写完整
+                    if(exps==true){ //填写完整
                         send2 = true
                     }
-                    else if (exp==false) {  //存在 请点击字符 未填写完整
+                    else if (exps==false) {  //存在 请点击字符 未填写完整
                         send2 = false
                         alert("请填写工作经历,至少一段!")
                     }
