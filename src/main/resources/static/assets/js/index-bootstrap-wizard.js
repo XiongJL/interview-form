@@ -45,6 +45,10 @@ $(document).ready(function(){
                   required: true,
                   minlength: 18,
                   maxlength: 18,
+              },
+              understand:{
+		         required: true,
+                  maxlength:160
               }
 
         }
