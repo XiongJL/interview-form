@@ -49,6 +49,9 @@ $(document).ready(function(){
               understand:{
 		         required: true,
                   maxlength:160
+              },
+              nation:{
+		         required: true
               }
 
         }
