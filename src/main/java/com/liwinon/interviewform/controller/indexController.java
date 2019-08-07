@@ -29,7 +29,8 @@ public class indexController {
         String path0 =  data.get("iname0");
         String path1 = data.get("phone0");
         String path="\\\\172.60.6.66\\部门管理\\HR\\002-招聘管理\\入职登记表\\"+path0+path1+".doc"; //要写入的地址
-        WordUtil.writeFile(path,WordUtil.redFileContent("D:\\DOCS\\入职登记表（A3版）修改版本.xml",data));
+        //String path = "D:\\DOCS\\各类需求文档,说明,报告,分析\\面试无纸化相关文档\\test\\"+path0+path1+".doc";
+        WordUtil.writeFile(path,WordUtil.redFileContent("D:\\DOCS\\F-LWN-31.2.1-R01 入职申请表（职员）.xml",data));
         return "ok";
     }
 }

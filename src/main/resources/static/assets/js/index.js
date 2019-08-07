@@ -1,17 +1,17 @@
-var send = false
+// var send = false
 var send2 = false
 /*发送数据*/
 var submittimes = 0;
 function put() {
     var data = $("#data").serialize();
     console.log(data)
+    debugger
    if (submittimes>=2){
     // if (submittimes>=999){
         alert("请勿重复提交!")
     }
-    else if (send==false || send2 ==false){
+    else if (send2 ==false){
         checkInput()
-        //alert("请完成必填内容!")
     }else{
         $.ajax({
             url:"/inform/save",
@@ -22,6 +22,8 @@ function put() {
                 if("ok"==res){
                     alert("提交成功!")
                     submittimes++;
+                }else{
+                    alert("提交失败!")
                 }
             },
             error:function (err) {
@@ -56,7 +58,6 @@ function addMember(size) {
                     '                                                    <td onclick="inputValue(this)">请点击<input name="family'+family+'" type="hidden" value=""></td>\n' +
                     '                                                    <td onclick="inputValue(this)">请点击<input name="family'+family+'" type="hidden" value=""></td>\n' +
                     '                                                    <td onclick="inputValue(this)">请点击<input name="family'+family+'" type="hidden" value=""></td>\n' +
-                    '                                                    <td onclick="inputValue(this)">请点击<input name="family'+family+'" type="hidden" value=""></td>\n' +
                     '                                                </tr>');
                 family++;
             }
@@ -79,15 +80,16 @@ function addMember(size) {
 }
 var studytimes = 2;
 var traintimes = 2;
+var trainDate = 3;
 var traincertificate = 6;
 
-function addStudy(size) {
-    if(size==4){  //学校
+function addStudy(size,type) {
+    if(type==1){  //学校
         var count = document.getElementById("study").getElementsByTagName("block").length;
         if(count>=size){
-            alert("最多填写四个.")
+            alert("最多填写三个.")
         }else {
-            document.getElementById("study").insertAdjacentHTML("beforeend", '<block>\n' +
+            document.getElementById("study").insertAdjacentHTML("beforeend", '<hr /><block>\n' +
                 '                                                学校名称 <input name="school'+studytimes+'" type="text" class="form-control" placeholder="">\n' +
                 '                                                    <div class="col-xs-6 mydate " >\n' +
                 '                                                由 <input name="scdate'+studytimes+'1" type="date" class="form-control" placeholder="">\n' +
@@ -96,21 +98,27 @@ function addStudy(size) {
                 '                                                至 <input name="scdate'+studytimes+'2" type="date" class="form-control" placeholder="">\n' +
                 '                                                    </div>\n' +
                 '                                                专业 <input name="major'+studytimes+'" type="text" class="form-control" placeholder="">\n' +
-                '                                                获得证书 <input name="certificate'+studytimes+'" type="text" class="form-control" placeholder="">\n' +
+                '                                                学历 <input name="education'+studytimes+'" type="text" class="form-control" placeholder="">\n' +
+                '                                                学位 <input name="aDegree'+studytimes+'" type="text" class="form-control" placeholder="">\n' +
                 '                                                </block>')
             studytimes ++;
         }
     }
-    if(size==3){  //培训
+    if(type==2){  //培训
         var count = document.getElementById("train").getElementsByTagName("block").length;
         if(count>=size){
             alert("最多填写三个.")
         }else {
-            document.getElementById("train").insertAdjacentHTML("beforeend", ' <block>\n' +
-                '                                                    培训机构 <input name="training'+traintimes+'" type="text" class="form-control" placeholder="">\n' +
-                '                                                    培训时间 <input name="time'+traintimes+'" type="text" class="form-control" placeholder="X个月">\n' +
-                '                                                    培训课程 <input name="course'+traintimes+'" type="text" class="form-control" placeholder="">\n' +
-                '                                                    获得证书 <input name="certificate'+traincertificate+'" type="text" class="form-control" placeholder="">\n' +
+            document.getElementById("train").insertAdjacentHTML("beforeend", '<hr /> <block>\n' +
+                '                                                    培训机构 <input name="train'+traintimes+'" type="text" class="form-control" placeholder="">\n' +
+                '<div class="col-xs-6 mydate " >' +
+                '                                                        由 <input name="tdate'+ trainDate++ +'" type="date" class="form-control" placeholder="">' +
+                '                                                    </div>' +
+                '                                                    <div class="col-xs-6 mydate">' +
+                '                                                        至 <input name="tdate'+ trainDate++ +'" type="date" class="form-control" placeholder="">' +
+                '                                                    </div>' +
+                '                                                    培训内容 <input name="content'+traintimes+'" type="text" class="form-control" placeholder="">\n' +
+                '                                                    培训结果/证书 <input name="course'+traintimes+'" type="text" class="form-control" placeholder="">\n' +
                 '                                                </block>');
             traintimes ++;
             traincertificate ++;
@@ -119,10 +127,10 @@ function addStudy(size) {
 }
 
 var exp = 2;
-function addExp(size){  //添加工作简历
+function addExp(size){  //添加工作经历
     var count = document.getElementById("experience").getElementsByTagName("tr").length;
     if(count>=size){
-        alert("最多填写四段经历.")
+        alert("最多填写三段经历.")
     }else {
         document.getElementById("experience").insertAdjacentHTML("beforeend", '<tr name="experience'+exp+'">\n' +
             '                                                        <td onclick="inputValue(this)">请点击<input name="experience'+exp+'" type="hidden" value=""></td>\n' +
@@ -199,14 +207,6 @@ function checkInput(){
                 }
             }else if (id=="jiny"){
                 if(type.context.className=="active") {//选中的是这个元素
-                    checkContent("#sos1")
-                    if(sos==true){ //填写完整
-                        send = true
-                    }
-                    else if (sos==false) {  //存在 请点击字符 未填写完整
-                        send = false
-                        alert("请填写紧急联系人,至少一位!")
-                    }
                     checkContent("#experience1")
                     if(exps==true){ //填写完整
                         send2 = true

@@ -1,6 +1,7 @@
 package com.liwinon.interviewform;
 
 import com.liwinon.interviewform.util.WordUtil;
+import net.sf.json.JSONObject;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -23,6 +24,14 @@ public class InterviewFormApplicationTests {
 //        data.put("MM","02");
 //        String path="D:\\DOCS\\123.doc";
 //        WordUtil.writeFile(path,WordUtil.redFileContent("D:\\DOCS\\入职登记表（A3版）修改版本.xml",data));
+    }
+    @Test
+    public void huifu(){
+//        String datas ="";
+//        JSONObject json = JSONObject.fromObject(datas);
+//
+//        Map<String,String> data  = json;
+//      //  WordUtil.writeFile("D:\\DOCS\\黄道15119040370.doc",WordUtil.redFileContent("D:\\DOCS\\入职登记表（A3版）修改版本.xml",data));
     }
 
 }

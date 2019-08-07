@@ -46,12 +46,38 @@ $(document).ready(function(){
                   minlength: 18,
                   maxlength: 18,
               },
-              understand:{
-		         required: true,
-                  maxlength:160
-              },
               nation:{
 		         required: true
+              },
+              education:{
+                  required: true
+              },
+              address:{
+                  maxlength:13
+              },
+              idAddress:{
+                  maxlength:24
+              },
+              marriage:{
+                  required: true
+              },
+              education1:{
+		         maxlength:14
+              },education2:{
+                  maxlength:14
+              },education3:{
+                  maxlength:14
+              },
+              sosPhone:{
+                  required: true,
+                  minlength: 11,
+                  maxlength: 11,
+              },
+              sosName:{
+                  required: true
+              },
+              hobby:{
+                  maxlength: 87
               }
 
         }

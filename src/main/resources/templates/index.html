@@ -96,17 +96,17 @@
                                         </div>
                                         <div class="col-sm-10 col-sm-offset-1">
                                             <div class="form-group">
-                                                <label>预计可到岗时间</label>
-                                                <input required name="date1" type="date" class="form-control" placeholder="">
+                                                <label>应聘日期</label>
+                                                <input required name="postDate0" type="date" class="form-control" placeholder="">
                                             </div>
                                         </div>
-                                        <div class="col-sm-10 col-sm-offset-1">
-                                            <div class="form-group">
-                                                <label>期望待遇</label>
-                                                <input required name="salary" type="text" class="form-control"
-                                                       placeholder="5000元/月 ; 10k/月">
-                                            </div>
-                                        </div>
+<!--                                        <div class="col-sm-10 col-sm-offset-1">-->
+<!--                                            <div class="form-group">-->
+<!--                                                <label>期望待遇</label>-->
+<!--                                                <input required name="salary" type="text" class="form-control"-->
+<!--                                                       placeholder="5000元/月 ; 10k/月">-->
+<!--                                            </div>-->
+<!--                                        </div>-->
                                         <div class="col-sm-10 col-sm-offset-1">
                                             <div class="form-group">
                                                 <label>性别</label>
@@ -175,10 +175,7 @@
                                             <div class="form-group">
                                                 <label>教育学历</label>
                                                 <select class="form-control" name="education">
-                                                    <option>无</option>
-                                                    <option>初中</option>
-                                                    <option>职中</option>
-                                                    <option>高中</option>
+                                                    <option>高中/中专</option>
                                                     <option>大专</option>
                                                     <option>本科</option>
                                                     <option>硕士</option>
@@ -212,33 +209,33 @@
                                         </div>
                                         <div class="col-sm-10 col-sm-offset-1">
                                             <div class="form-group">
-                                                <label>现住址</label>
+                                                <label>现住地址</label>
                                                 <input required name="address" type="text" class="form-control" placeholder="">
                                             </div>
                                         </div>
                                         <div class="col-sm-10 col-sm-offset-1">
                                             <div class="form-group">
-                                                <label>电子邮箱</label>
-                                                <input name="email" type="email" class="form-control" placeholder="">
+                                                <label><b>紧急联系人</b></label>
+                                                <input name="sosName" type="text" class="form-control valid" placeholder="紧急联系人姓名">
+                                                <input name="sosPhone" type="number" class="form-control valid" placeholder="紧急联系人电话">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!--  -->
+
                                 <div class="tab-pane" id="account">
                                     <div class="row">
                                         <div class="col-sm-10 col-sm-offset-1">
                                             <div class="form-group">
-                                                <label><b>家庭主要成员</b><small>(必填两位成员)</small></label>
+                                                <label><b>家庭成员</b><small>(必填两位成员)</small></label>
                                                 <table class="table table-striped table-condensed">
                                                     <thead>
                                                     <tr>
                                                         <th>姓名</th>
                                                         <th>关系</th>
-                                                        <th>年龄</th>
+                                                        <th>联系电话</th>
                                                         <th>职业</th>
                                                         <th>工作单位</th>
-                                                        <th>联系电话</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody id="family">
@@ -248,10 +245,8 @@
                                                         <td onclick="inputValue(this)">请点击<input required name="family1" type="hidden" value=""></td>
                                                         <td onclick="inputValue(this)">请点击<input required name="family1" type="hidden" value=""></td>
                                                         <td onclick="inputValue(this)">请点击<input required name="family1" type="hidden" value=""></td>
-                                                        <td onclick="inputValue(this)">请点击<input required name="family1" type="hidden" value=""></td>
                                                     </tr>
                                                     <tr id="family2" name="family2">
-                                                        <td onclick="inputValue(this)">请点击<input required name="family1" type="hidden" value=""></td>
                                                         <td onclick="inputValue(this)">请点击<input required name="family1" type="hidden" value=""></td>
                                                         <td onclick="inputValue(this)">请点击<input required name="family1" type="hidden" value=""></td>
                                                         <td onclick="inputValue(this)">请点击<input required name="family1" type="hidden" value=""></td>
@@ -300,10 +295,10 @@
 
                                         <div class="col-sm-10 col-sm-offset-1">
                                             <div class="form-group" id="study">
-                                                <label><b>教育背景</b></label>
+                                                <label><b>教育经历</b></label>
                                                 <br>
                                                 <block>
-                                                    学校名称 <input name="school1" type="text" class="form-control" placeholder="">
+                                                    毕业学校 <input name="school1" type="text" class="form-control" placeholder="">
                                                     <div class="col-xs-6 mydate " >
                                                         由 <input name="scdate11" type="date" class="form-control" placeholder="">
                                                     </div>
@@ -311,27 +306,33 @@
                                                         至 <input name="scdate12" type="date" class="form-control" placeholder="">
                                                     </div>
                                                     专业 <input name="major1" type="text" class="form-control" placeholder="">
-                                                    获得证书 <input name="certificate1" type="text" class="form-control" placeholder="">
+                                                    学历 <input name="education1" type="text" class="form-control" placeholder="">
+                                                    学位 <input name="aDegree1" type="text" class="form-control" placeholder="">
                                                 </block>
                                             </div>
-                                            <input onclick="addStudy(4)" type='button'
+                                            <input onclick="addStudy(3,1)" type='button'
                                                    class='btn  btn-fill btn-info btn-wd btn-sm'
-                                                   value='添加背景'/>
+                                                   value='添加经历'/>
 
                                         </div>
 
                                         <div class="col-sm-10 col-sm-offset-1">
                                             <div class="form-group" id="train">
-                                                <label><b>技能培训</b></label>
+                                                <label><b>培训经历</b></label>
                                                 <br>
                                                 <block>
-                                                    培训机构 <input name="training1" type="text" class="form-control" placeholder="">
-                                                    培训时间 <input name="time1" type="text" class="form-control" placeholder="X个月">
-                                                    培训课程 <input name="course1" type="text" class="form-control" placeholder="">
-                                                    获得证书 <input name="certificate5" type="text" class="form-control" placeholder="">
+                                                    培训机构 <input name="train1" type="text" class="form-control" placeholder="">
+                                                    <div class="col-xs-6 mydate " >
+                                                        由 <input name="tdate1" type="date" class="form-control" placeholder="">
+                                                    </div>
+                                                    <div class="col-xs-6 mydate">
+                                                        至 <input name="tdate2" type="date" class="form-control" placeholder="">
+                                                    </div>
+                                                    培训内容 <input name="content1" type="text" class="form-control" placeholder="">
+                                                    培训结果/证书 <input name="course1" type="text" class="form-control" placeholder="">
                                                 </block>
                                             </div>
-                                            <input onclick="addStudy(3)" type='button'
+                                            <input onclick="addStudy(3,2)" type='button'
                                                    class='btn  btn-fill btn-info btn-wd btn-sm'
                                                    value='添加培训'/>
 
@@ -341,146 +342,13 @@
                                                 <label><b>语言能力</b></label>
                                                 <br>
                                                 <div>
-                                                    <label>英语</label>
-                                                    <br>
-                                                    <b>说: </b>
-                                                    <br>
-                                                    <div class="radio radio-inline">
-                                                        <input type="radio" name="enspeak" id="radio11" value="优秀" checked>
-                                                        <label for="radio11">
-                                                            优秀
-                                                        </label>
-                                                    </div>
-                                                    <div class="radio radio-inline">
-                                                        <input type="radio" name="enspeak" id="radio12" value="一般">
-                                                        <label for="radio12">
-                                                            一般
-                                                        </label>
-                                                    </div>
-                                                    <div class="radio radio-inline">
-                                                        <input type="radio" name="enspeak" id="radio13" value="差">
-                                                        <label for="radio13">
-                                                            差
-                                                        </label>
-                                                    </div>
-                                                    <br>
-                                                    <b>读: </b>
-                                                    <br>
-                                                    <div class="radio radio-inline">
-                                                        <input type="radio" name="enread" id="radio14" value="优秀" checked>
-                                                        <label for="radio14">
-                                                            优秀
-                                                        </label>
-                                                    </div>
-                                                    <div class="radio radio-inline">
-                                                        <input type="radio" name="enread" id="radio15" value="一般">
-                                                        <label for="radio15">
-                                                            一般
-                                                        </label>
-                                                    </div>
-                                                    <div class="radio radio-inline">
-                                                        <input type="radio" name="enread" id="radio16" value="差">
-                                                        <label for="radio16">
-                                                            差
-                                                        </label>
-                                                    </div>
-                                                    <br>
-                                                    <b>写: </b>
-                                                    <br>
-                                                    <div class="radio radio-inline">
-                                                        <input type="radio" name="enwrite" id="radio17" value="优秀" checked>
-                                                        <label for="radio17">
-                                                            优秀
-                                                        </label>
-                                                    </div>
-                                                    <div class="radio radio-inline">
-                                                        <input type="radio" name="enwrite" id="radio18" value="一般">
-                                                        <label for="radio18">
-                                                            一般
-                                                        </label>
-                                                    </div>
-                                                    <div class="radio radio-inline">
-                                                        <input type="radio" name="enwrite" id="radio19" value="差">
-                                                        <label for="radio19">
-                                                            差
-                                                        </label>
-                                                    </div>
+                                                    <label>英语等级</label>
+                                                    <input name="enlevel" type="text" class="form-control" placeholder="">
                                                 </div>
                                                 <div>
-                                                    <label>其他语言</label>
-                                                    <input name="elsela" type="text" class="form-control" placeholder="没有则不填">
-
-                                                    <br>
-                                                    <b>说: </b>
-                                                    <br>
-                                                    <div class="radio radio-inline">
-                                                        <input type="radio" name="enspeak2" id="radio21" value="优秀" checked>
-                                                        <label for="radio21">
-                                                            优秀
-                                                        </label>
-                                                    </div>
-                                                    <div class="radio radio-inline">
-                                                        <input type="radio" name="enspeak2" id="radio22" value="一般">
-                                                        <label for="radio22">
-                                                            一般
-                                                        </label>
-                                                    </div>
-                                                    <div class="radio radio-inline">
-                                                        <input type="radio" name="enspeak2" id="radio23" value="差">
-                                                        <label for="radio23">
-                                                            差
-                                                        </label>
-                                                    </div>
-                                                    <br>
-                                                    <b>读: </b>
-                                                    <br>
-                                                    <div class="radio radio-inline">
-                                                        <input type="radio" name="enread2" id="radio24" value="优秀" checked>
-                                                        <label for="radio24">
-                                                            优秀
-                                                        </label>
-                                                    </div>
-                                                    <div class="radio radio-inline">
-                                                        <input type="radio" name="enread2" id="radio25" value="一般">
-                                                        <label for="radio25">
-                                                            一般
-                                                        </label>
-                                                    </div>
-                                                    <div class="radio radio-inline">
-                                                        <input type="radio" name="enread2" id="radio26" value="差">
-                                                        <label for="radio26">
-                                                            差
-                                                        </label>
-                                                    </div>
-                                                    <br>
-                                                    <b>写: </b>
-                                                    <br>
-                                                    <div class="radio radio-inline">
-                                                        <input type="radio" name="enwrite2" id="radio27" value="优秀" checked>
-                                                        <label for="radio27">
-                                                            优秀
-                                                        </label>
-                                                    </div>
-                                                    <div class="radio radio-inline">
-                                                        <input type="radio" name="enwrite2" id="radio28" value="一般">
-                                                        <label for="radio28">
-                                                            一般
-                                                        </label>
-                                                    </div>
-                                                    <div class="radio radio-inline">
-                                                        <input type="radio" name="enwrite2" id="radio29" value="差">
-                                                        <label for="radio29">
-                                                            差
-                                                        </label>
-                                                    </div>
+                                                    <label>其他外语等级</label>
+                                                    <input name="otherLevel" type="text" class="form-control" placeholder="没有则不填">
                                                 </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-10 col-sm-offset-1">
-                                            <div class="form-group">
-                                                <label><b>等级认证</b></label>
-                                                <input name="enlevel" type="text" class="form-control" placeholder="例如:英语四级">
                                             </div>
                                         </div>
                                         <div class="col-sm-10 col-sm-offset-1">
@@ -509,11 +377,11 @@
                                                 <table class="table table-striped table-condensed">
                                                     <thead>
                                                     <tr>
-                                                        <th>单位名称及所在部门</th>
+                                                        <th>公司名称</th>
                                                         <th>职 位</th>
                                                         <th>工作起止时间</th>
                                                         <th>离职原因</th>
-                                                        <th>证明人、职位及电话</th>
+                                                        <th>证明人及电话</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody id="experience">
@@ -527,49 +395,14 @@
 
                                                     </tbody>
                                                 </table>
-                                                <input onclick="addExp(4)" type='button'
+                                                <input onclick="addExp(3)" type='button'
                                                        class='btn  btn-fill btn-info btn-wd btn-sm'
                                                        value='添加经历'/>
 
                                             </div>
                                         </div>
-                                        <div class="col-xs-12">
-                                            <div class="form-group">
-                                                <label><b>简述你对所申请职位的认识</b></label>
-                                                <textarea name="understand" class="form-control valid" placeholder="最多160个字" rows="8" aria-invalid="false"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <div class="form-group">
-                                                <label><b>紧急联系人</b><small>至少填一位</small></label>
-                                                <table class="table table-striped table-condensed">
-                                                    <thead>
-                                                    <tr>
-                                                        <th>姓名</th>
-                                                        <th>关系</th>
-                                                        <th>联系地址</th>
-                                                        <th>联系电话</th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody >
-                                                    <tr id="sos1" name="sosconcat1">
-                                                        <td onclick="inputValue(this)">请点击<input name="sosconcat1" type="hidden" value=""></td>
-                                                        <td onclick="inputValue(this)">请点击<input name="sosconcat1" type="hidden" value=""></td>
-                                                        <td onclick="inputValue(this)">请点击<input name="sosconcat1" type="hidden" value=""></td>
-                                                        <td onclick="inputValue(this)">请点击<input name="sosconcat1" type="hidden" value=""></td>
-                                                    </tr>
-                                                    <tr name="sosconcat2">
-                                                        <td onclick="inputValue(this)">请点击<input name="sosconcat2" type="hidden" value=""></td>
-                                                        <td onclick="inputValue(this)">请点击<input name="sosconcat2" type="hidden" value=""></td>
-                                                        <td onclick="inputValue(this)">请点击<input name="sosconcat2" type="hidden" value=""></td>
-                                                        <td onclick="inputValue(this)">请点击<input name="sosconcat2" type="hidden" value=""></td>
-                                                    </tr>
 
-                                                    </tbody>
-                                                </table>
 
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -583,7 +416,7 @@
                                 </div>
 
                                 <div class="pull-left">
-                                    <input onclick="toBack()" id="back" type='button' class='btn btn-previous btn-fill btn-default btn-wd btn-sm'
+                                    <input  id="back" type='button' class='btn btn-previous btn-fill btn-default btn-wd btn-sm'
                                            name='previous' value='后退'/>
                                 </div>
                                 <div class="clearfix"></div>
